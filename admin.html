@@ -10,35 +10,86 @@
 
 <style>
 
-body{
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Poppins,sans-serif;
-background:#f4f6fb;
-padding:40px;
 }
+
+/* BACKGROUND ANIMASI */
+
+body{
+min-height:100vh;
+padding:40px;
+
+background:linear-gradient(270deg,#9bafd9,#103783,#9bafd9,#103783);
+background-size:800% 800%;
+
+animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+
+}
+
+/* HEADER */
 
 h1{
 text-align:center;
-margin-bottom:20px;
+color:white;
+margin-bottom:35px;
+font-size:30px;
+animation:fadeDown 0.8s ease;
 }
 
-/* statistik */
+@keyframes fadeDown{
+
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* STATISTIK */
 
 .stats{
 display:flex;
 justify-content:center;
 gap:20px;
-margin-bottom:25px;
+margin-bottom:30px;
+flex-wrap:wrap;
 }
 
 .stat{
+
 background:white;
-padding:15px 25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-font-weight:bold;
+padding:20px 30px;
+border-radius:14px;
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+animation:fadeUp 0.6s ease;
+
 }
 
-/* search */
+.stat:nth-child(1){color:#000000;}
+.stat:nth-child(2){color:#000000;}
+.stat:nth-child(3){color:#000000;}
+
+/* SEARCH */
 
 .search{
 display:flex;
@@ -47,108 +98,200 @@ margin-bottom:20px;
 }
 
 .search input{
-width:300px;
-padding:10px;
-border-radius:6px;
-border:1px solid #ccc;
+
+width:320px;
+padding:12px;
+border-radius:10px;
+border:none;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
 }
 
-/* filter */
+/* FILTER */
 
 .filters{
+
 display:flex;
 justify-content:center;
 gap:10px;
-margin-bottom:20px;
+margin-bottom:25px;
+
 }
 
 .filters button{
-padding:8px 15px;
+
+padding:9px 16px;
 border:none;
-border-radius:6px;
+border-radius:10px;
+background:white;
 cursor:pointer;
-background:#ddd;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+transition:0.2s;
+
 }
 
 .filters button:hover{
-background:#ccc;
+
+transform:scale(1.07);
+background:#f1f5f9;
+
 }
 
-/* container */
-
-.container{
-max-width:800px;
-margin:auto;
-}
-
-/* card */
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.tanggal{
-font-size:13px;
-color:#666;
-margin-bottom:6px;
-}
-
-.jenis{
-font-weight:bold;
-margin-bottom:6px;
-}
-
-.saran{
-color:#2a8d08;
-}
-
-.keluhan{
-color:#e74c3c;
-}
-
-/* tombol */
-
-.actions{
-margin-top:10px;
-}
-
-.copy{
-background:#3498db;
-border:none;
-color:white;
-padding:6px 10px;
-border-radius:6px;
-cursor:pointer;
-}
+/* HAPUS SEMUA */
 
 .topbtn{
+
 display:flex;
 justify-content:center;
-margin-bottom:20px;
+margin-bottom:30px;
+
 }
 
 .deleteAll{
-background:#e74c3c;
+
+background:#ef4444;
 border:none;
 color:white;
-padding:10px 15px;
-border-radius:6px;
+padding:10px 18px;
+border-radius:10px;
 cursor:pointer;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+transition:0.2s;
+
+}
+
+.deleteAll:hover{
+transform:scale(1.08);
+}
+
+/* CONTAINER */
+
+.container{
+max-width:720px;
+margin:auto;
+}
+
+/* CARD */
+
+.card{
+
+background:white;
+padding:22px;
+border-radius:16px;
+margin-bottom:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+animation:fadeUp 0.5s ease;
+
+transition:0.25s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px) scale(1.02);
+
+}
+
+/* TANGGAL */
+
+.tanggal{
+
+font-size:13px;
+color:#64748b;
+margin-bottom:6px;
+
+}
+
+/* TAG */
+
+.jenis{
+
+display:inline-block;
+padding:4px 12px;
+border-radius:20px;
+font-size:12px;
+margin-bottom:10px;
+
+}
+
+.saran{
+
+background:#dcfce7;
+color:#16a34a;
+
+}
+
+.keluhan{
+
+background:#fee2e2;
+color:#dc2626;
+
+}
+
+/* PESAN */
+
+.pesan{
+
+margin-bottom:12px;
+line-height:1.5;
+font-size:15px;
+
+}
+
+/* BUTTON */
+
+.copy{
+
+background:#3b82f6;
+border:none;
+color:white;
+padding:7px 14px;
+border-radius:8px;
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+.copy:hover{
+
+transform:scale(1.08);
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
 
 <h1>Dashboard Aspirasi OSIS</h1>
-
-<!-- statistik -->
 
 <div class="stats">
 
@@ -158,13 +301,9 @@ cursor:pointer;
 
 </div>
 
-<!-- search -->
-
 <div class="search">
 <input type="text" id="search" placeholder="Cari aspirasi...">
 </div>
-
-<!-- filter -->
 
 <div class="filters">
 <button onclick="filterJenis('all')">Semua</button>
@@ -172,15 +311,11 @@ cursor:pointer;
 <button onclick="filterJenis('Keluhan')">Keluhan</button>
 </div>
 
-<!-- hapus semua -->
-
 <div class="topbtn">
 <button onclick="hapusSemua()" class="deleteAll">
 Hapus Semua Aspirasi
 </button>
 </div>
-
-<!-- list aspirasi -->
 
 <div class="container" id="list"></div>
 
@@ -194,16 +329,11 @@ const url="https://script.google.com/macros/s/AKfycbz423LIrPISp4nnH4HYu1_Ry40cSO
 
 let semuaData=[];
 
-/* format tanggal */
-
 function formatTanggal(tanggal){
 
 let t=new Date(tanggal);
 
-let bulan=[
-"Januari","Februari","Maret","April","Mei","Juni",
-"Juli","Agustus","September","Oktober","November","Desember"
-];
+let bulan=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
 
 let hari=t.getDate();
 let namaBulan=bulan[t.getMonth()];
@@ -216,31 +346,19 @@ return hari+" "+namaBulan+" "+tahun+" • "+jam+":"+menit;
 
 }
 
-/* ambil data */
-
 fetch(url)
 .then(res=>res.json())
 .then(data=>{
 
 semuaData=data.reverse();
-
 renderData(semuaData);
 hitungStatistik();
 
-})
-.catch(err=>{
-
-document.getElementById("list").innerHTML="Gagal memuat data";
-console.log(err);
-
 });
-
-/* render card */
 
 function renderData(data){
 
 let list=document.getElementById("list");
-
 list.innerHTML="";
 
 data.forEach(row=>{
@@ -259,13 +377,13 @@ card.innerHTML=`
 ${row[1]}
 </div>
 
-<p>${row[2]}</p>
+<div class="pesan">
+${row[2]}
+</div>
 
-<div class="actions">
 <button class="copy" onclick="copyText('${row[2]}')">
 Salin
 </button>
-</div>
 
 `;
 
@@ -274,8 +392,6 @@ list.appendChild(card);
 });
 
 }
-
-/* statistik */
 
 function hitungStatistik(){
 
@@ -295,8 +411,6 @@ document.getElementById("keluhan").innerText=keluhan;
 
 }
 
-/* filter */
-
 function filterJenis(jenis){
 
 if(jenis=="all"){
@@ -305,12 +419,9 @@ return;
 }
 
 let hasil=semuaData.filter(row=>row[1]==jenis);
-
 renderData(hasil);
 
 }
-
-/* search */
 
 document.getElementById("search").addEventListener("keyup",function(){
 
@@ -324,17 +435,12 @@ renderData(hasil);
 
 });
 
-/* copy */
-
 function copyText(text){
 
 navigator.clipboard.writeText(text);
-
 alert("Aspirasi disalin");
 
 }
-
-/* hapus semua */
 
 function hapusSemua(){
 
@@ -356,4 +462,4 @@ location.reload();
 
 </body>
 </html>
-```
+
