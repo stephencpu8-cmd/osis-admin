@@ -290,8 +290,65 @@ transform:translateY(0);
 </head>
 
 <body>
+<div class="header">
 
-<h1>Dashboard Aspirasi OSIS</h1>
+<h1 class="judul">Dashboard Aspirasi OSIS</h1>
+
+<img src="https://i.pinimg.com/736x/0d/31/b9/0d31b93e53357a17daac1d59cfa870fc.jpg" class="logo-osis">
+
+</div>
+<style>/* HEADER */
+
+.header{
+position:relative;
+margin-bottom:40px;
+}
+
+/* JUDUL TENGAH */
+
+.judul{
+text-align:center;
+color:white;
+font-size:34px;
+margin:0;
+}
+
+/* LOGO OSIS POJOK KANAN */
+
+.logo-osis{
+
+position:absolute;
+right:0;
+top:0;
+
+width:75px;
+height:95px;
+
+border-radius:9px;
+
+object-fit:cover;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+animation:logoMasuk 0.8s ease;
+
+}
+
+/* animasi */
+
+@keyframes logoMasuk{
+
+from{
+opacity:0;
+transform:translateX(20px);
+}
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}</style>
 
 <div class="stats">
 
