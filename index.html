@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
-window.location.href = "login.html";
+window.location.href="login.html";
 </script>
+
+</head>
+
+<body>
+</body>
+</html>
 
 <form id="aspirasiForm"
 action="https://script.google.com/macros/s/AKfycbz423LIrPISp4nnH4HYu1_Ry40cSO5RKeuWwac1odnOSOvxKWyhxx3iyVGlUzBtduF9/exec"
@@ -36,5 +40,12 @@ window.location.href="success.html";
 },1500);
 
 });
+
+</script>
+<script>
+
+if(localStorage.getItem("adminLogin")!=="true"){
+window.location.href="login.html";
+}
 
 </script>

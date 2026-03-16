@@ -1,5 +1,4 @@
-const url = "LINK_WEB_APP_KAMU";
-
+const url="https://script.google.com/macros/s/AKfycbz423LIrPISp4nnH4HYu1_Ry40cSO5RKeuWwac1odnOSOvxKWyhxx3iyVGlUzBtduF9/exec";
 fetch(url)
 .then(res => res.json())
 .then(data => {
