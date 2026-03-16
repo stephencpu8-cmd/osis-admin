@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+window.location.href = "login.html";
+</script>
+
+<form id="aspirasiForm"
+action="https://script.google.com/macros/s/AKfycbz423LIrPISp4nnH4HYu1_Ry40cSO5RKeuWwac1odnOSOvxKWyhxx3iyVGlUzBtduF9/exec"
+method="POST">
+
+<select name="jenisaspirasi" required>
+<option value="">Pilih jenis pesan</option>
+<option value="Saran">Saran</option>
+<option value="Keluhan">Keluhan</option>
+</select>
+
+<textarea name="pesanaspirasi" placeholder="Tulis aspirasi kamu di sini..." required></textarea>
+
+<button type="submit">Kirim Aspirasi</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("aspirasiForm").addEventListener("submit", function(){
+
+setTimeout(function(){
+window.location.href="success.html";
+},1500);
+
+});
+
+</script>

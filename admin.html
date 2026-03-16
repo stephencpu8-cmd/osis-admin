@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Aspirasi</title>
+
+<style>
+
+body{
+font-family:Poppins,sans-serif;
+background:#f4f6fb;
+padding:40px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.jenis{
+font-weight:bold;
+color:#2a8d08;
+}
+
+.tanggal{
+font-size:12px;
+color:gray;
+margin-bottom:10px;
+}
+
+.delete{
+background:#e74c3c;
+border:none;
+color:white;
+padding:8px 12px;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.delete:hover{
+opacity:0.8;
+}
+
+.topbtn{
+display:flex;
+justify-content:center;
+margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Dashboard Aspirasi OSIS</h1>
+
+<div class="topbtn">
+<button onclick="hapusSemua()" class="delete">
+Hapus Semua Aspirasi
+</button>
+</div>
+
+<div class="container" id="dataAspirasi"></div>
+
+<script>
+
+const url="https://script.google.com/macros/s/AKfycbz423LIrPISp4nnH4HYu1_Ry40cSO5RKeuWwac1odnOSOvxKWyhxx3iyVGlUzBtduF9/exec";
+
+fetch(url)
+.then(res => res.json())
+.then(data => {
+
+let container = document.getElementById("dataAspirasi");
+
+data.reverse().forEach((row,index) => {
+
+let card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<div class="tanggal">${row[0]}</div>
+<div class="jenis">${row[1]}</div>
+<p>${row[2]}</p>
+`;
+
+container.appendChild(card);
+
+});
+
+});
+
+
+// HAPUS SEMUA
+function hapusSemua(){
+
+if(confirm("Hapus semua aspirasi?")){
+
+fetch(url+"?deleteAll=true")
+.then(()=>{
+
+alert("Semua aspirasi dihapus");
+location.reload();
+
+});
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
